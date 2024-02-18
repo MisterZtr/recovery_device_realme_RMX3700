@@ -1,0 +1,5 @@
+# Gatekeeper
+vendor.gatekeeper.disable_spu=true
+
+# USB Config
+vendor.usb.use_ffs_mtp=1
