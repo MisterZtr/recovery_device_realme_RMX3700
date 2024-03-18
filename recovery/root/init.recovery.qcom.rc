@@ -50,4 +50,13 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
-#
+
+service kernelsu /system/bin/kernelsu.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+on property:twrp.decrypt.done=true
+    start kernelsu
